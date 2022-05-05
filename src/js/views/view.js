@@ -85,6 +85,6 @@ export default class View {
     </div>
     `;
     // this._clear();
-    this._parentElement.insertAdjacentHTML('afterbegin', markup);
+    // this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 }
