@@ -1,5 +1,6 @@
 .recipe {
   background-color: $color-grey-light-1;
+  grid-area: recipe;
 
   ///////////
   // FIGURE
@@ -57,7 +58,7 @@
       );
     }
 
-    @media only screen and (max-width: $bp-medium) {
+    @media only screen and (max-width: $bp-large) {
       width: 70%;
     }
   }
@@ -68,6 +69,11 @@
     display: flex;
     align-items: center;
     padding: 7.5rem 8rem 3.5rem 8rem;
+    @media only screen and (max-width: $bp-mediumEx) {
+      padding-top: 8rem;
+    }
+
+    position: relative;
   }
 
   &__info {
@@ -118,6 +124,14 @@
       fill: $color-primary;
     }
   }
+  &__details &__user-generated {
+    @media only screen and (max-width: $bp-mediumEx) {
+      position: absolute;
+      top: 3rem;
+      right: 6rem;
+    }
+  }
+  //   look at end of file for another button
 
   ///////////
   // INGREDIENTS
@@ -175,5 +189,13 @@
 
   &__publisher {
     font-weight: 700;
+  }
+}
+// just for better look in small screen
+.btn--bookmark {
+  @media only screen and (max-width: $bp-mediumEx) {
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
   }
 }

@@ -5,8 +5,14 @@
   align-items: center;
   justify-content: space-between;
 
+  @media only screen and (max-width: $bp-medium) {
+    flex-wrap: wrap;
+    align-content: center;
+  }
+
   &__logo {
     margin-left: 4rem;
+
     height: 4.6rem;
     display: block;
   }
@@ -41,11 +47,18 @@
       color: $color-grey-light-3;
     }
 
-    @media only screen and (max-width: $bp-medium) {
+    @media only screen and (max-width: $bp-largest) {
       width: auto;
 
       &::placeholder {
         color: white;
+      }
+    }
+    @media only screen and (max-width: $bp-medium) {
+      width: 30rem;
+
+      &::placeholder {
+        color: $color-grey-light-3;
       }
     }
   }
@@ -53,6 +66,11 @@
   &__btn {
     font-weight: 600;
     font-family: inherit;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    order: 3;
+    margin-top: 1rem;
+    margin-left: 3.5rem;
   }
 }
 

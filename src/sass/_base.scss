@@ -11,10 +11,12 @@ $color-grey-dark-2: #918581; // Lighter text
 
 $gradient: linear-gradient(to right bottom, $color-grad-1, $color-grad-2);
 
-$bp-large: 78.15em; // 1250px
-$bp-medium: 61.25em; // 980px
-$bp-small: 37.5em; // 600px
-$bp-smallest: 31.25em; // 500px
+$bp-largest: 78.15em; // 1250px
+$bp-large: 61.25em; // 980px
+$bp-mediumEx: 51.25em; // 820px
+$bp-medium: 46.87em; // 750px
+$bp-small: 40.62em; // 650px
+$bp-smallest: 34.37em; // 550px
 
 * {
   margin: 0;
@@ -31,8 +33,14 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 
-  @media only screen and (max-width: $bp-medium) {
+  @media only screen and (max-width: $bp-large) {
     font-size: 50%;
+  }
+  @media only screen and (max-width: $bp-small) {
+    font-size: 43%;
+  }
+  @media only screen and (max-width: $bp-smallest) {
+    font-size: 40%;
   }
 }
 
@@ -58,12 +66,19 @@ body {
 
   display: grid;
   grid-template-rows: 10rem minmax(100rem, auto);
-  grid-template-columns: 1fr 2fr;
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-rows: 15rem minmax(100rem, auto);
+  }
+  grid-template-columns: minmax(25rem, 1fr) minmax(30rem, 2fr);
+
+  @media only screen and (max-width: $bp-mediumEx) {
+  }
+
   grid-template-areas:
     'head head'
     'list recipe';
 
-  @media only screen and (max-width: $bp-large) {
+  @media only screen and (max-width: $bp-largest) {
     max-width: 100%;
     margin: 0;
     border-radius: 0;
